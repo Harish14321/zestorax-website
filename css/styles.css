@@ -184,9 +184,9 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 }
 
 .logo-img {
-    width: 23px;
-    height: 23px;
-    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
     object-fit: contain;
 }
 
