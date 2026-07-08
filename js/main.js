@@ -50,20 +50,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission handling
+    // Form submission handling - let Formspree handle it
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
 
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            // Here you would normally send to a server
-            // For now, we'll show a success message
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+                if (response.ok) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem. Please email us directly at support@zestorax.com');
+                }
+            } catch (error) {
+                alert('Oops! There was a problem. Please email us directly at support@zestorax.com');
+            }
+
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         });
     }
 
