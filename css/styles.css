@@ -1281,8 +1281,10 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 .product-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -1373,6 +1375,64 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     background-position: center;
     background-repeat: no-repeat;
     background-size: 10px;
+}
+
+/* Locked/Upcoming Product Card */
+.product-card.locked {
+    position: relative;
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+    border: 2px dashed var(--gray-300);
+}
+
+.product-card.locked:hover {
+    border-color: var(--gray-400);
+}
+
+.locked-badge {
+    background: var(--gray-500) !important;
+}
+
+.locked-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-200);
+    border-radius: 12px;
+}
+
+.locked-overlay svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--gray-500);
+}
+
+.product-icon.locked-icon {
+    background: var(--gray-300);
+}
+
+.product-icon.locked-icon svg {
+    stroke: var(--gray-500);
+}
+
+.product-card.locked h3 {
+    color: var(--gray-600);
+}
+
+.product-card.locked > p {
+    color: var(--gray-500);
+}
+
+.locked-features li {
+    color: var(--gray-500) !important;
+}
+
+.locked-features li::before {
+    background: var(--gray-400) !important;
 }
 
 /* CTA Section */
@@ -2239,6 +2299,11 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
     .protection-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-showcase {
+        grid-template-columns: 1fr;
+        max-width: 500px;
     }
 
     .hero-metrics {
