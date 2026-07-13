@@ -1382,6 +1382,8 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     position: relative;
     background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
     border: 2px dashed var(--gray-300);
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card.locked:hover {
@@ -1394,20 +1396,20 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 .locked-overlay {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 48px;
-    height: 48px;
+    top: 16px;
+    left: 16px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--gray-200);
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 .locked-overlay svg {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     stroke: var(--gray-500);
 }
 
@@ -1433,6 +1435,20 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 .locked-features li::before {
     background: var(--gray-400) !important;
+}
+
+/* Equal height product cards */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card > p {
+    flex-grow: 0;
+}
+
+.product-card .product-features {
+    flex-grow: 1;
 }
 
 /* CTA Section */
