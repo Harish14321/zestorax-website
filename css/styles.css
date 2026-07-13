@@ -971,6 +971,101 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     stroke: var(--primary);
 }
 
+.trust-badge.shopify-trusted .trust-icon {
+    background: linear-gradient(135deg, #96bf48 0%, #5e8e3e 100%);
+}
+
+.trust-badge.shopify-trusted .trust-icon svg {
+    stroke: var(--white);
+}
+
+/* ============================================
+   Reviews Section
+   ============================================ */
+.reviews-section {
+    padding: 100px 0;
+    background: var(--gray-50);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.review-card {
+    padding: 32px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.review-stars svg {
+    width: 20px;
+    height: 20px;
+    fill: #fbbf24;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.review-author strong {
+    font-size: 14px;
+    color: var(--dark);
+}
+
+/* ============================================
+   Social Media Links
+   ============================================ */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-800);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--gray-400);
+}
+
+.social-link:hover svg {
+    stroke: var(--white);
+}
+
 /* ============================================
    Original Features Section (Keep for other pages)
    ============================================ */
@@ -1804,6 +1899,10 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     }
 
     .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
         grid-template-columns: 1fr;
     }
 
