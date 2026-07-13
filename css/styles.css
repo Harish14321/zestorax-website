@@ -817,6 +817,28 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     aspect-ratio: 4/3;
 }
 
+/* Screenshot Images */
+.screenshot-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+.screenshot-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.hero-large-screenshot .screenshot-image {
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--radius-xl);
+}
+
 /* ============================================
    Audience Section (Who It's For)
    ============================================ */
