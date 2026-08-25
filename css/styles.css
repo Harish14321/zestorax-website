@@ -279,6 +279,17 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     pointer-events: none;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(31, 58, 95, 0.07) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 85%);
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 85%);
+    pointer-events: none;
+}
+
 .hero.hero-split .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -499,7 +510,12 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 }
 
 .screenshot-placeholder {
+    position: relative;
     background: var(--gradient-subtle);
+    background-image:
+        radial-gradient(circle, rgba(31, 58, 95, 0.1) 1.5px, transparent 1.5px),
+        var(--gradient-subtle);
+    background-size: 24px 24px, 100% 100%;
     border: 2px dashed var(--gray-300);
     border-radius: var(--radius-lg);
     aspect-ratio: 16/10;
@@ -507,6 +523,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .screenshot-placeholder:hover {
@@ -1485,12 +1502,24 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 /* CTA Section */
 .cta {
+    position: relative;
     padding: 100px 0;
     background: var(--gradient);
     text-align: center;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    pointer-events: none;
 }
 
 .cta-content {
+    position: relative;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -1517,6 +1546,66 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     background: var(--white);
     color: var(--primary);
     border-color: var(--white);
+}
+
+/* Founder Card */
+.founder-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.founder-photo {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gray-100);
+}
+
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 25%;
+}
+
+.founder-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+}
+
+.founder-title {
+    display: inline-block;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.founder-info p {
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+.founder-info p + p {
+    margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+    .founder-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
 }
 
 /* Mission Grid */
