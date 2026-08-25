@@ -2,40 +2,47 @@
    ZestoraX Website - Professional Styles
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables
+   Palette: deep steel-navy + warm bronze — a considered pair distinct from
+   every individual app's own brand color (rust/teal/berry/indigo), and from
+   the generic purple-to-blue gradient this replaces. Neutrals carry a
+   slight cool-slate bias tying back to the navy, instead of a stock,
+   unbiased gray ramp. --accent/--warning/--danger are left untouched below:
+   they do real semantic work (success/warning/error states) throughout the
+   stylesheet and aren't the brand's decorative accent. */
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary: #0ea5e9;
+    --primary: #1F3A5F;
+    --primary-dark: #14283F;
+    --primary-light: #3D5D82;
+    --secondary: #8B6E3F;
     --accent: #22c55e;
     --accent-light: #4ade80;
     --warning: #f59e0b;
     --danger: #ef4444;
-    --dark: #0f172a;
-    --dark-light: #1e293b;
-    --gray-900: #111827;
-    --gray-800: #1f2937;
-    --gray-700: #374151;
-    --gray-600: #4b5563;
-    --gray-500: #6b7280;
-    --gray-400: #9ca3af;
-    --gray-300: #d1d5db;
-    --gray-200: #e5e7eb;
-    --gray-100: #f3f4f6;
-    --gray-50: #f9fafb;
+    --dark: #14181D;
+    --dark-light: #1C2129;
+    --gray-900: #1A2028;
+    --gray-800: #262D37;
+    --gray-700: #3D4550;
+    --gray-600: #565F6B;
+    --gray-500: #707886;
+    --gray-400: #9AA1AC;
+    --gray-300: #C4C9D0;
+    --gray-200: #DEE1E5;
+    --gray-100: #EFF1F3;
+    --gray-50: #F7F8F9;
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, #0284c7 100%);
-    --gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, #0A1622 100%);
+    --gradient-subtle: linear-gradient(135deg, rgba(31, 58, 95, 0.08) 0%, rgba(139, 110, 63, 0.08) 100%);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --radius: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
     --transition: all 0.3s ease;
 }
 
@@ -51,12 +58,16 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, "SF Pro Display", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--gray-700);
     background: var(--white);
     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.015em;
 }
 
 a {
@@ -117,12 +128,12 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 .btn-primary {
     background: var(--gradient);
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 14px rgba(31, 58, 95, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 6px 20px rgba(31, 58, 95, 0.5);
 }
 
 .btn-secondary {
@@ -530,8 +541,9 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 /* Section Styles */
 .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
+    max-width: 640px;
 }
 
 .section-header h2 {
@@ -541,8 +553,6 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 .section-header p {
     font-size: 1.125rem;
     color: var(--gray-500);
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 /* ============================================
@@ -580,7 +590,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(31, 58, 95, 0.1) 0%, rgba(139, 110, 63, 0.1) 100%);
     border-radius: 50%;
     margin: 0 auto 24px;
 }
@@ -1275,7 +1285,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(31, 58, 95, 0.1) 0%, rgba(139, 110, 63, 0.1) 100%);
     border-radius: 12px;
     margin-bottom: 20px;
 }
@@ -1794,7 +1804,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(31, 58, 95, 0.1) 0%, rgba(139, 110, 63, 0.1) 100%);
     border-radius: 12px;
     font-size: 1.25rem;
 }
@@ -1854,7 +1864,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.1);
 }
 
 .form-group textarea {
@@ -1891,7 +1901,7 @@ h3 { font-size: clamp(1.1rem, 1.5vw, 1.25rem); }
 
 .product-full.featured {
     border: 2px solid var(--primary);
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.02) 0%, rgba(14, 165, 233, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(31, 58, 95, 0.02) 0%, rgba(139, 110, 63, 0.02) 100%);
 }
 
 .product-full .product-info h2 {
